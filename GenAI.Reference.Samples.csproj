@@ -1,0 +1,42 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <UserSecretsId>45cc3dd1-99f1-43bf-8f57-e47416adb188</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Azure.CognitiveServices.Search.WebSearch" Version="2.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="9.0.0-preview.6.24327.7" />
+    <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="9.0.0-preview.6.24327.7" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="9.0.0-preview.6.24327.7" />
+    <PackageReference Include="Microsoft.SemanticKernel" Version="1.17.0" />
+    <PackageReference Include="Microsoft.SemanticKernel.Abstractions" Version="1.17.0" />
+    <PackageReference Include="Microsoft.SemanticKernel.Agents.Core" Version="1.17.0-alpha" />
+    <PackageReference Include="Microsoft.SemanticKernel.Markdown" Version="1.17.0-alpha" />
+    <PackageReference Include="Microsoft.SemanticKernel.Plugins.Core" Version="1.17.0-alpha" />
+    <PackageReference Include="Microsoft.SemanticKernel.Plugins.Memory" Version="1.17.0-alpha" />
+    <PackageReference Include="Microsoft.SemanticKernel.PromptTemplates.Handlebars" Version="1.17.0" />
+    <PackageReference Include="Microsoft.SemanticKernel.Prompty" Version="1.17.0-alpha" />
+    <PackageReference Include="Spectre.Console" Version="0.49.2-preview.0.15" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Data\donation01.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SystemPrompts\WadeTheMeteorologist.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SystemPrompts\TaxImpactReviewer.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="SystemPrompts\TaxImpactAnalyzer.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>

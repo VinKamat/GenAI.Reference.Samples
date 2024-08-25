@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.34928.147
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GenAI.Reference.Samples", "GenAI.Reference.Samples.csproj", "{D0A179A2-8BC5-4F63-A6CD-C84B1CFC7C24}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D0A179A2-8BC5-4F63-A6CD-C84B1CFC7C24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0A179A2-8BC5-4F63-A6CD-C84B1CFC7C24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0A179A2-8BC5-4F63-A6CD-C84B1CFC7C24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0A179A2-8BC5-4F63-A6CD-C84B1CFC7C24}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0B116130-B753-4CE1-9538-8ACD6308CC99}
+	EndGlobalSection
+EndGlobal
