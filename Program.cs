@@ -4,8 +4,12 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.SemanticKernel;
 
 var builder = new ConfigurationBuilder()
+    .AddJsonFile("appsettings.json", optional: true)
     .AddUserSecrets<Program>();
 var configuration = builder.Build();
+
+string weatherApiUrl = configuration["WeatherApi:Url"]
+                     ?? throw new ArgumentNullException(nameof(weatherApiUrl), "The WeatherApi Url is not configured.");
 
 string weatherApiKey = configuration["AI:WeatherApi:ApiKey"]
                   ?? throw new ArgumentNullException(nameof(weatherApiKey), "The weatherApi Key is not set as a user secret.");
@@ -25,7 +29,7 @@ kernelBuilder.Services.AddAzureOpenAIChatCompletion("gpt-4o", endpoint, apiKey);
 Kernel kernel = kernelBuilder.Build();
 
 // #1 Wade, the Meteorologist
-// await WadeTheMeteorologist.Execute(weatherApiKey, kernel);
+// await WadeTheMeteorologist.Execute(weatherApiKey, weatherApiUrl, kernel);
 
 // #2 TaxImpactAnalyzer - AgentGroupChat
 await TaxImpactAnalyzer.Execute(kernel);

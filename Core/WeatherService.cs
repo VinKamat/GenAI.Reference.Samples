@@ -1,4 +1,4 @@
-﻿using Microsoft.SemanticKernel;
+using Microsoft.SemanticKernel;
 
 namespace SKAgentApp.Core
 {
@@ -7,19 +7,20 @@ namespace SKAgentApp.Core
     /// </summary>
     internal class WeatherService
     {
-        private string _weatherApiKey;
+        private readonly string _weatherApiKey;
+        private readonly string _weatherApiUrl;
 
-        public WeatherService(string weatherApiKey)
+        public WeatherService(string weatherApiKey, string weatherApiUrl)
         {
-            this._weatherApiKey = weatherApiKey;
+            _weatherApiKey = weatherApiKey;
+            _weatherApiUrl = weatherApiUrl;
         }
 
         // Add a method a kernel function to get detailed weather report data from weatherapi.com
         [KernelFunction]
         public async Task<string> GetWeather(string location)
         {
-            // TODO: api url should be in App Settings and retrieved from there via Configuration
-            string apiUrl = $"https://api.weatherapi.com/v1/current.json?key={_weatherApiKey}&q={location}&aqi=no";
+            string apiUrl = $"{_weatherApiUrl}?key={_weatherApiKey}&q={location}&aqi=no";
             using (var client = new HttpClient())
             {
                 HttpResponseMessage response = await client.GetAsync(apiUrl);
