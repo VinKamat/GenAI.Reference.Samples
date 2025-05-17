@@ -12,13 +12,13 @@ namespace GenAI.Reference.Samples.Apps
 {
     internal class WadeTheMeteorologist
     {
-        internal static async Task Execute(string weatherApiKey, Kernel kernel)
+        internal static async Task Execute(string weatherApiKey, string weatherApiUrl, Kernel kernel)
         {
             var rule = new Rule("[bold white on green4]:: Wade - the AI Meteorlogist ::[/]");
             AnsiConsole.Write(rule);
             Console.WriteLine();
 
-            var weatherService = new WeatherService(weatherApiKey);
+            var weatherService = new WeatherService(weatherApiKey, weatherApiUrl);
             kernel.ImportPluginFromObject(weatherService);
 
             var settings = new OpenAIPromptExecutionSettings() { ToolCallBehavior = ToolCallBehavior.AutoInvokeKernelFunctions };

@@ -30,12 +30,13 @@ GenAI.Reference.Samples has 2 samples:
 
 ### 2. Configure User Secrets
 
-Add your Azure OpenAI API Key and Endpoint to the user secrets:
+Add your Azure OpenAI API Key, Endpoint, and Weather API settings to the user secrets:
 
 ```bash
-dotnet user-secrets set "AI:EASub:AzureOpenAI:Endpoint" "<azure openai endpoint goes here>" 
+dotnet user-secrets set "AI:EASub:AzureOpenAI:Endpoint" "<azure openai endpoint goes here>"
 dotnet user-secrets set "AI:EASub:AzureOpenAI:ApiKey" "<azure openai api key goes here>"
 dotnet user-secrets set "AI:WeatherApi:ApiKey" "<weather api key goes here>"
+dotnet user-secrets set "WeatherApi:Url" "https://api.weatherapi.com/v1/current.json"
 ```
 
 
